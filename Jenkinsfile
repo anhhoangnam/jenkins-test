@@ -16,7 +16,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 script {
-		   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+		   docker.withRegistry('https://registry.hub.docker.com', 'jenkinstest') {
                     	docker.build("anhhoang93/java-spring-hello:${TAG}")
 		   }
                 }
