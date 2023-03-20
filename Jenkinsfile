@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
 		   docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                    	docker.build("das1942/java-spring-hello:${TAG}")
+                    	docker.build("anhhoang93/java-spring-hello:${TAG}")
 		   }
                 }
             }
@@ -26,8 +26,8 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                        docker.image("das1942/java-spring-hello:${TAG}").push()
-                        docker.image("das1942/java-spring-hello:${TAG}").push("latest")
+                        docker.image("anhhoang93/java-spring-hello:${TAG}").push()
+                        docker.image("anhhoang93/java-spring-hello:${TAG}").push("latest")
                     }
                 }
             }
